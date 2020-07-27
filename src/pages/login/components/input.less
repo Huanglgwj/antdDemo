@@ -1,0 +1,48 @@
+@import '~@/styles/config.less';
+.ant-input:focus, .ant-input-affix-wrapper:focus ,.ant-input-focused,.ant-input-affix-wrapper-focused{
+    box-shadow: none;
+}
+.login-input{
+    background: #f7f7f7;
+    border-radius: 8px;
+    padding: 15px;   
+    border: 0;
+    &.login-code{
+        padding: 9px 10px;
+        input{
+            height: 32px;
+            line-height: 32px;
+        }
+    }
+    input{
+        background: transparent;
+        border: 0;
+    }
+}
+.login-button{
+    width: 100%;
+    border-radius: 8px;
+    padding: 15px;
+    background: #F7F7F7;
+    color:#CCCCCC;
+    border:0;
+    line-height: 1;
+    height: 50px;
+    &.active{
+        background: @color-main;
+        color:@color-f;
+    }
+}
+.ant-input-group-addon{
+    border: 0;
+    padding: 0;
+}
+.login-code-button{
+    background: @color-main;
+    border-radius: 8px;
+    height: 34px;
+    line-height: 1;
+    padding: 9px 12px;
+    color:@color-6;
+    width: 96px;
+}

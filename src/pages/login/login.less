@@ -1,0 +1,62 @@
+@import '~@/styles/config.less';
+.login-warp {
+    .login-content {
+        background: @color-f;
+        border-radius: 20px;
+        padding: 70px 120px;
+        width: 1200px;
+        height: 660px;
+        margin: -330px 0 0 -600px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+    }
+    .login-tabs {
+        display: inline-block;
+        width: 100%;
+        .ant-tabs-bar {
+            border: 0;
+            margin-bottom: 30px;
+        }
+        .ant-tabs-nav {
+            display: flex;
+            background: #F7F7F7;
+            border-radius: 8px;
+            &::before{
+                content: none;
+            }
+        }
+        .ant-tabs-tab {
+            margin: 0;
+            flex: 1;
+            padding: 14px 49px;
+            line-height: 1;
+            color:@color-9;
+            font-size: 18px;
+            text-align: center;
+            z-index: 2;
+            &.ant-tabs-tab-btn{
+                color:@color-9;
+            }
+        }
+        .ant-tabs-tab-active .ant-tabs-tab-btn{
+            font-weight: bold;
+            color: @color-3;
+        }
+        .ant-tabs-ink-bar.ant-tabs-ink-bar-animated{
+            background-color: @color-main;
+            height: 100%;
+            border-radius: 8px;
+        }
+    }
+    .login-bg {
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        background-image: url(../../assets/login-bg.jpg);
+        background-position: center;
+        background-repeat: no-repeat;
+        z-index: -1;
+    }
+   
+}

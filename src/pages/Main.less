@@ -1,0 +1,41 @@
+@import '../styles/config.less';
+// Logo
+.main-logo {
+    height: 60px;
+    width: 100%;
+    background-color: @color-main;
+    color: @color-3;
+    font-size: 20px;
+    text-align: center;
+    line-height: 60px;
+    font-weight: bold;
+}
+// 头像弹窗
+.main-avatar-popover .ant-popover-inner-content{
+    padding: 12px 0;
+    border-radius: 4px;
+    min-width: 150px;
+}
+.menu-icon{
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    &.active-icon{
+        display: none;
+    }
+}
+.ant-menu-submenu-selected,.ant-menu-item-selected{
+    .menu-icon.default-icon{
+        display: none;
+    }
+    .menu-icon.active-icon{
+        display: inline-block;
+        opacity:1;
+    }
+}
+.ant-menu-item .anticon, .ant-menu-submenu-title .anticon{
+    margin-right: 8px;
+}

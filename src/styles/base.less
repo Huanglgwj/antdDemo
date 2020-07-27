@@ -1,0 +1,91 @@
+@import './config.less';
+//设置字体大小-px
+@fontSize:12 14 15 16 18 20 22 24 25 26 27 28 29 30 32 36 40 48 52 60;
+.fontSizeFn(@i) when (@i<=length(@fontSize)) {
+    @name: extract(@fontSize, @i);
+    .fs-@{name} {
+        font-size: extract(@fontSize, @i) * 1px;
+    }
+    .fontSizeFn(@i+1);
+}
+.fontSizeFn(1);
+//设置margin padding
+@widthList:2, 5,8, 10, 15, 18, 20, 25, 30, 35, 40, 50, 60, 70, 80, 90, 100;
+.marginFn(@i) when (@i <= length(@widthList)) {
+    @name: extract(@widthList, @i);
+    //margin
+    .ml-@{name} {
+        margin-left: extract(@widthList, @i) * 1px;
+    }
+    .mr-@{name} {
+        margin-right: extract(@widthList, @i) * 1px;
+    }
+    .mt-@{name} {
+        margin-top: extract(@widthList, @i) * 1px;
+    }
+    .mb-@{name} {
+        margin-bottom: extract(@widthList, @i) * 1px;
+    }
+    .mar-@{name} {
+        margin: extract(@widthList, @i) * 1px;
+    }
+    //padding
+    .pl-@{name} {
+        padding-left: extract(@widthList, @i) * 1px;
+    }
+    .pr-@{name} {
+        padding-right: extract(@widthList, @i) * 1px;
+    }
+    .pt-@{name} {
+        padding-top: extract(@widthList, @i) * 1px;
+    }
+    .pb-@{name} {
+        padding-bottom: extract(@widthList, @i) * 1px;
+    }
+    .pad-@{name} {
+        padding: extract(@widthList, @i) * 1px;
+    }
+    .marginFn(@i+1);
+}
+
+.marginFn(1);
+
+//设置字体颜色和背景颜色
+@colorNameList:  3, 6, 9, e6, main,red,e,f; //名字
+@colorColorList:  #333333, #666666, #999999, #e6e6e6,@color-main,@color-red,#eeeeee,#FFFFFF; //具体值
+.setColor(@i) when (@i<=length(@colorNameList)) {
+  @name: extract(@colorNameList, @i);
+  .col-@{name} {
+    color: extract(@colorColorList, @i);
+  }
+  .bg-@{name} {
+    background-color: extract(@colorColorList, @i);
+  }
+  .setColor(@i+1);
+}
+.setColor(1);
+//设置边框
+@borderNameList: bc, df, e, 3, red; //名字
+@borderColorList: #bcbcbc, #dfdfdf, #eeeeee, #333333, #d81e06; //具体值
+.setBorder(@i) when (@i <= length(@borderNameList)) {
+  @name: extract(@borderNameList, @i);
+  .bt-@{name} {
+    border-top: unit(1,px) solid extract(@borderColorList, @i);
+  }
+  .bb-@{name} {
+    border-bottom: unit(1,px) solid extract(@borderColorList, @i);
+  }
+  .bl-@{name} {
+    border-left: unit(1,px) solid extract(@borderColorList, @i);
+  }
+  .br-@{name} {
+    border-right: unit(1,px) solid extract(@borderColorList, @i);
+  }
+  .border-@{name} {
+    border: unit(1,px) solid extract(@borderColorList, @i);
+  }
+  .setBorder(@i+1);
+}
+
+.setBorder(1);
+

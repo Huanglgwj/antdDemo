@@ -1,0 +1,41 @@
+{
+  "errcode": 0,
+  "errmsg": "成功",
+  "time": 1595560350,
+  "data": [
+    {
+      "id": 1,
+      "name": "demo模块",
+      "pid": 0,
+      "icon": "",
+      "type": 1,
+      "act": "",
+      "_child": [
+        {
+          "id": 2,
+          "name": "Table",
+          "pid": 1,
+          "icon": "",
+          "type": 1,
+          "act": "admin/Table/index"
+        },
+        {
+            "id": 3,
+            "name": "Form",
+            "pid": 1,
+            "icon": "",
+            "type": 1,
+            "act": "admin/Form/index"
+          }
+      ]
+    },
+    {
+      "id": 2,
+      "name": "G2",
+      "pid": 0,
+      "icon": "",
+      "type": 1,
+      "act": "admin/G2/index"
+    }
+  ]
+}
