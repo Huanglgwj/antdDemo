@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { Table } from 'antd';
 import _TableFile from './importFiles';
-import {tableIndexProps} from './table.d'
+import { tableIndexProps } from './table.d';
 // 默认分页参数
 const defaultPage = {
     position: 'bottomRight',
@@ -16,9 +16,6 @@ const TableFile: objectKey = _TableFile;
 // 默认table选择栏设置
 let rowSelectionDefault: objectKey = {
     type: 'checkbox',
-    selections: {
-        key: 'name',
-    },
 };
 const TableModule: React.FC<tableIndexProps> = (props) => {
     let {
@@ -31,13 +28,9 @@ const TableModule: React.FC<tableIndexProps> = (props) => {
         loading = false,
     } = props;
     pagination = { ...defaultPage, ...pagination };
-    let setRowSelection: objectKey = { ...rowSelectionDefault, ...rowSelection };
-    // 没有hide，则显示选择栏
-    if (!setRowSelection.hide) {
-        setRowSelection = { rowSelection: setRowSelection };
-    }
+    rowSelection = rowSelection.hide === true ? null : { ...rowSelectionDefault, ...rowSelection };
     // 表格数据循环处理
-    const columnsList:any[] = columns.filter((item: any, index: number) => {
+    const columnsList: any[] = columns.filter((item: any, index: number) => {
         // type类型转为首字母大写
         let typeName = item.type.slice(0, 1).toUpperCase() + item.type.slice(1);
         // 根据type值匹配components文件名
@@ -72,7 +65,7 @@ const TableModule: React.FC<tableIndexProps> = (props) => {
             dataSource={data}
             pagination={pagination}
             loading={loading}
-            {...setRowSelection}
+            rowSelection={rowSelection}
         ></Table>
     );
 };
