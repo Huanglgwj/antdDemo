@@ -12,7 +12,7 @@ export interface tableIndexProps{
     data: object[];
     rowKey?: string;
     callback?: (name: string, data: objectKey, emit?: objectKey) => void;
-    rowSelection?: rowSelectionProps;
+    rowSelection?: any;
     pagination?: objectKey;
     loading?: boolean;
 }

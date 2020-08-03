@@ -1,6 +1,5 @@
 import React from 'react';
 import { Select } from 'antd';
-import { getDict } from '@/apis/getDict/index';
 import { CaretDownOutlined } from '@ant-design/icons';
 import { render } from '@testing-library/react';
 interface selectProps {
@@ -25,7 +24,7 @@ const SelectForm: React.FC<selectProps> = (props) => {
         }
     }, [initialValues]);
     // 如果不是直接传选项，则拿字典返回的数据选项
-    let selectList = columns.selectList || getDict(columns.code) || [];
+    let selectList = columns.selectList  || [];
     return (
         <Select
             value={defaultValue}
