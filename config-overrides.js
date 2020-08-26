@@ -20,10 +20,10 @@ const addProxy = () => (configFunction) => {
   configFunction.port = 3000;
   configFunction.hotOnly = false;
   configFunction.proxy = {
-      '/taskapi': {
-          target: 'http://47.101.212.213',
+      '/api': {
+          target: 'http://url',
           changeOrigin: true,
-          pathRewrite: { '^/taskapi': '' },
+          pathRewrite: { '^/api': '' },
       },
   };
   return configFunction;
